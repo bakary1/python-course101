@@ -15,3 +15,18 @@ def word_frequency(sentence: str):
 
 
 word_frequency("The cat sat on the mat. The cat was happy.")
+
+# Problem 2 — List comprehensions & filtering
+
+people = [
+    {"name": "Alice", "age": 30, "city": "Helsinki"},
+    {"name": "Bob", "age": 17, "city": "Turku"},
+    {"name": "Charlie", "age": 25, "city": "Helsinki"},
+    {"name": "Dana", "age": 15, "city": "Oulu"},
+]
+
+filtered_people = [
+    person["name"]
+    for person in people
+    if person["age"] >= 18 and person["city"].strip().lower() == "helsinki"
+]
