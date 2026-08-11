@@ -105,3 +105,37 @@ def show_args(**args):
 show_args(name="Bakary", age=35, jobbtitle="AI Engineer")
 
 ## Exercises: Level 3
+
+# 1. Write a functions which checks if all items are unique in the list.
+
+
+def check_uniqueness(values: list) -> bool:
+    return len(values) == len(set(values))
+
+
+check_uniqueness([2, 3, "hello", "hello"])
+
+# 2. Write a function which checks if all the items of the list are of the same data type.
+
+
+def check_dtype(values: list) -> bool:
+
+    first_type = type(values[0])
+
+    for item in values:
+        if type(item) != first_type:
+            return False
+    return True
+
+
+check_dtype(["hello", "hello", "Hello"])
+
+# 4. Write a function which check if provided variable is a valid python variable
+import keyword
+
+
+def is_valid(variable_name) -> bool:
+    return variable_name.isidentifier() and not keyword.iskeyword(variable_name)
+
+
+is_valid("class")
