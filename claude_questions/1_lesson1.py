@@ -30,3 +30,15 @@ filtered_people = [
     for person in people
     if person["age"] >= 18 and person["city"].strip().lower() == "helsinki"
 ]
+
+# Problem 3 — Functions with default args & error handling
+
+
+def safe_divide(a, b, Default=None):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return Default
+
+
+safe_divide(10, 0)
