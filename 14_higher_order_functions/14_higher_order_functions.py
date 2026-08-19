@@ -22,3 +22,35 @@ list(filter(lambda x: "land" in x, countries))
 
 # 5. Use filter to filter out countries having exactly six characters.
 list(filter(lambda country: len(country) == 6, countries))
+
+# 6. Use filter to filter out countries containing six letters and more in the country list.
+list(filter(lambda x: len(x) >= 6, countries))
+
+# 7. Use filter to filter out countries starting with an 'E'
+list(filter(lambda x: x.startswith("E"), countries))
+
+# 9. Declare a function called get_string_lists which takes a list as a parameter and then returns a list containing only string items.
+from typing import Any
+
+
+def get_string_lists(values: list[Any]) -> list[str]:
+    return list(filter(lambda item: isinstance(item, str), values))
+
+
+get_string_lists(["hello", 5])
+
+# 10. Use reduce to sum all the numbers in the numbers list.
+from functools import reduce
+
+reduce(lambda x, y: x + y, numbers)
+
+# 11. Use reduce to concatenate all the countries and to produce this sentence
+sentence = ", are north European countries."
+(
+    reduce(lambda x, y: x + " " + y, countries[:-1])
+    + " "
+    + "and"
+    + " "
+    + countries[-1]
+    + sentence
+)
